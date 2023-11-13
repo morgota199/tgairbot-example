@@ -1,4 +1,4 @@
-import { TgAirBot, useStorage, WrapperId } from "@tgairbot/core";
+import { TgAirBot, useStorage, WrapperId, Telegram } from "@tgairbot/core";
 import { methods } from "../index";
 import { UserFormState } from "../callbacks/update.callback";
 
@@ -14,7 +14,8 @@ export const phoneForm = async (
 
     await methods.sendMessage({
       chatId: message.chat.id,
-      text: `Your phone ${message.text}.`,
+      parseMode: Telegram.ParseMode.HTML,
+      text: `Your phone <b>${message.text}</b>.`,
     });
   }
 

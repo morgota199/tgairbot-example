@@ -1,4 +1,4 @@
-import { HandlerCallback, useStorage } from "@tgairbot/core";
+import { HandlerCallback, useStorage, Telegram } from "@tgairbot/core";
 import { userForm } from "../forms/user.form";
 import { methods } from "../index";
 
@@ -21,5 +21,13 @@ export const onUpdateCallback: HandlerCallback<"message"> = async ({
 
   await storage.clear();
 
-  await methods.sendMessage({ chatId: params.chat.id, text: `Success!!!` });
+  await methods.sendMessage({
+    chatId: params.chat.id,
+    parseMode: Telegram.ParseMode.HTML,
+    text: `Success!!!
+  First name: <b>${data.firstName}</b>
+  Last name: <b>${data.lastName}</b>
+  Phone: <b>${data.phone}</b>
+  `,
+  });
 };

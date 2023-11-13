@@ -1,4 +1,4 @@
-import { TgAirBot, useStorage, WrapperId } from "@tgairbot/core";
+import { TgAirBot, useStorage, WrapperId, Telegram } from "@tgairbot/core";
 import { methods } from "../index";
 import { UserFormState } from "../callbacks/update.callback";
 
@@ -7,28 +7,33 @@ export const nameForm = async (
   wrapperId: WrapperId,
 ) => {
   const storage = useStorage<Partial<UserFormState>>(wrapperId);
-  const state = await storage.getData();
+  const data = await storage.getData();
 
-  if (!state?.firstName) {
-    await storage.setData({ firstName: message.text });
+  switch (true) {
+    case !data?.firstName:
+      await storage.setData({ firstName: message.text });
 
-    return methods.sendMessage({
-      chatId: message.chat.id,
-      text: `Your first name ${message.text}, Enter your last name.`,
-    });
+      await methods.sendMessage({
+        chatId: message.chat.id,
+        parseMode: Telegram.ParseMode.HTML,
+        text: `Your first name <b>${message.text}</b>, Enter your last name.`,
+      });
+
+      break;
+    case !data?.lastName:
+      await storage.setData({ lastName: message.text });
+
+      await methods.sendMessage({
+        chatId: message.chat.id,
+        parseMode: Telegram.ParseMode.HTML,
+        text: `Your last name  <b>${message.text}</b>, Enter your phone.`,
+      });
+
+      break;
   }
 
-  if (!state?.lastName) {
-    await storage.setData({ lastName: message.text });
+  const updatedData = await storage.getData();
+  if (!(updatedData.firstName && updatedData.lastName)) return;
 
-    await methods.sendMessage({
-      chatId: message.chat.id,
-      text: `Your last name  ${message.text}, Enter your phone.`,
-    });
-  }
-
-  const updatedState = await storage.getData();
-  if (!(updatedState.firstName && updatedState.lastName)) return;
-
-  return `${updatedState.firstName}, ${updatedState.lastName}`;
+  return `${updatedData.firstName}, ${updatedData.lastName}`;
 };
