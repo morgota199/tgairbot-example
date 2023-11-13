@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "tsc && node ./dist/index.js"
+    "build": "rm -rf ./dist ./node_modules && yarn && tsc",
+    "start:dev": "node ./dist/index.js",
+    "start:dev:forse": "yarn build && yarn start:dev"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tgairbot/core": "/Users/vladymyr/Documents/tgairbot/core",
-    "prettier": "^3.0.3"
+    "@tgairbot/core": "/home/vladimir/Documents/self_projects/tgairbot/core",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
   }
 }
