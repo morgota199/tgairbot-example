@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tgairbot/core": "0.3.0-alpha",
+    "@tgairbot/core": "0.3.1-alpha",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   }

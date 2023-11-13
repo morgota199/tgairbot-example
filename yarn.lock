@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@tgairbot/core@0.3.0-alpha":
-  version "0.3.0-alpha"
-  resolved "https://registry.yarnpkg.com/@tgairbot/core/-/core-0.3.0-alpha.tgz#4765e4ab4d75ae38b82f8a7909ba934a041bcbc5"
-  integrity sha512-y3Nodujj21rdkyeRMpJcJ5mCgZWg9tQ6u32a+lHFwLY1iriXx4Xd4x6+8ZGbpjE49DdbYYRgsTimOMqFsc8lfw==
+"@tgairbot/core@0.3.1-alpha":
+  version "0.3.1-alpha"
+  resolved "https://registry.yarnpkg.com/@tgairbot/core/-/core-0.3.1-alpha.tgz#dc759b96c2aed38e0b9d861894e74ddd8bd2a3bf"
+  integrity sha512-IAup5+IqJH1DfgKfSgPvZFpW3t9WootM/I6h7vUu6c316FKdT9/Nt+gw9PGmExyqvQdTX2ZpIdqbqR4oWhR7Tg==
   dependencies:
     form-data "^4.0.0"
 
