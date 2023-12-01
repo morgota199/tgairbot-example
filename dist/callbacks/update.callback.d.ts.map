@@ -1,1 +1,0 @@
-{"version":3,"file":"update.callback.d.ts","sourceRoot":"","sources":["../../src/callbacks/update.callback.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAwB,MAAM,gBAAgB,CAAC;AAIvE,MAAM,WAAW,aAAa;IAC5B,SAAS,EAAE,MAAM,CAAC;IAClB,QAAQ,EAAE,MAAM,CAAC;IACjB,KAAK,EAAE,MAAM,CAAC;CACf;AAED,eAAO,MAAM,gBAAgB,EAAE,eAAe,CAAC,SAAS,CAsBvD,CAAC"}
