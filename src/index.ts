@@ -1,14 +1,21 @@
-import { Polling, Methods, UpdateHandler } from "@tgairbot/core";
+import { UpdateHandler } from "@tgairbot/core";
 
-import { startMiddleware } from "./middleware/start-middleware";
-import { textMiddleware } from "./middleware/text.middleware";
 import { onUpdateCallback } from "./callbacks/update.callback";
 
-const TOKEN = "5608595917:AAGDGv6D9heC4nquo_AnuHlDU7w1SUi2bDk";
+import { startMiddleware } from "./middleware/start.middleware";
+import { textMiddleware } from "./middleware/text.middleware";
+import { overtimeMiddleware } from "./middleware/overtime.middleware";
+import { clearHistoryMiddleware } from "./middleware/clear-history.middleware";
+import { errorMiddleware } from "./middleware/error.middleware";
 
-new Polling(TOKEN).start().then();
-export const methods = new Methods(TOKEN);
+import "./config/polling";
+import "./layouts/default.layout";
+import "./layouts/error.layout";
 
-const updateMiddlewares = startMiddleware(textMiddleware(onUpdateCallback));
+const updateMiddlewares = overtimeMiddleware(
+  clearHistoryMiddleware(
+    errorMiddleware(startMiddleware(textMiddleware(onUpdateCallback))),
+  ),
+);
 
 UpdateHandler.onUpdates(updateMiddlewares);

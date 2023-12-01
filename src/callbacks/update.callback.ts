@@ -1,6 +1,6 @@
 import { HandlerCallback, useStorage, Telegram } from "@tgairbot/core";
 import { userForm } from "../forms/user.form";
-import { methods } from "../index";
+import { methods } from "../config/methods";
 
 export interface UserFormState {
   firstName: string;

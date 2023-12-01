@@ -1,7 +1,8 @@
 import { useFilter, useMiddleware, useStorage } from "@tgairbot/core";
-import { methods } from "../index";
+
 import { nameForm } from "../forms/name.form";
 import { UserFormState } from "../callbacks/update.callback";
+import { methods } from "../config/methods";
 
 export const startMiddleware = useMiddleware<"message">(
   async (wrapper, next) => {

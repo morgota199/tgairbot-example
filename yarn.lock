@@ -2,12 +2,17 @@
 # yarn lockfile v1
 
 
-"@tgairbot/core@0.3.1-alpha":
-  version "0.3.1-alpha"
-  resolved "https://registry.yarnpkg.com/@tgairbot/core/-/core-0.3.1-alpha.tgz#dc759b96c2aed38e0b9d861894e74ddd8bd2a3bf"
-  integrity sha512-IAup5+IqJH1DfgKfSgPvZFpW3t9WootM/I6h7vUu6c316FKdT9/Nt+gw9PGmExyqvQdTX2ZpIdqbqR4oWhR7Tg==
+"@tgairbot/core@file:../core":
+  version "0.4.0-alpha"
   dependencies:
     form-data "^4.0.0"
+
+"@types/dotenv@^8.2.0":
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/@types/dotenv/-/dotenv-8.2.0.tgz#5cd64710c3c98e82d9d15844375a33bf1b45d053"
+  integrity sha512-ylSC9GhfRH7m1EUXBXofhgx4lUWmFeQDINW5oLuS+gxWdfUeW4zJdeVTYVkexEW+e2VUvlZR2kGnGGipAWR7kw==
+  dependencies:
+    dotenv "*"
 
 asynckit@^0.4.0:
   version "0.4.0"
@@ -25,6 +30,11 @@ delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==
+
+dotenv@*, dotenv@^16.3.1:
+  version "16.3.1"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.3.1.tgz#369034de7d7e5b120972693352a3bf112172cc3e"
+  integrity sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==
 
 form-data@^4.0.0:
   version "4.0.0"

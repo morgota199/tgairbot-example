@@ -1,6 +1,6 @@
 import { TgAirBot, useStorage, WrapperId, Telegram } from "@tgairbot/core";
-import { methods } from "../index";
 import { UserFormState } from "../callbacks/update.callback";
+import { methods } from "../config/methods";
 
 export const nameForm = async (
   message: TgAirBot.Message,
