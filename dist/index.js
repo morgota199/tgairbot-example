@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("@tgairbot/core");
+const update_callback_1 = require("./callbacks/update.callback");
+const start_middleware_1 = require("./middleware/start.middleware");
+const text_middleware_1 = require("./middleware/text.middleware");
+const overtime_middleware_1 = require("./middleware/overtime.middleware");
+const clear_history_middleware_1 = require("./middleware/clear-history.middleware");
+const error_middleware_1 = require("./middleware/error.middleware");
+require("./config/polling");
+require("./layouts/default.layout");
+require("./layouts/error.layout");
+const updateMiddlewares = (0, overtime_middleware_1.overtimeMiddleware)((0, clear_history_middleware_1.clearHistoryMiddleware)((0, error_middleware_1.errorMiddleware)((0, start_middleware_1.startMiddleware)((0, text_middleware_1.textMiddleware)(update_callback_1.onUpdateCallback)))));
+core_1.UpdateHandler.onUpdates(updateMiddlewares);

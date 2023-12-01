@@ -1,0 +1,2 @@
+export declare const clearHistoryMiddleware: import("@tgairbot/core/types/middlewares/use-middleware").UseMiddlewareResult<string | number | symbol>;
+//# sourceMappingURL=clear-history.middleware.d.ts.map
