@@ -1,4 +1,4 @@
-import { useMiddleware } from "@tgairbot/core";
+import { useMiddleware, useStorage } from "@tgairbot/core";
 
 export const overtimeMiddleware = useMiddleware(async (wrapper, next) => {
   console.log(
@@ -16,8 +16,12 @@ export const overtimeMiddleware = useMiddleware(async (wrapper, next) => {
     (end.valueOf() - start.valueOf()) / 1000,
     "s",
   );
-  console.log(
-    wrapper.identId,
-    "<================================================",
-  );
+
+  const storage = useStorage(wrapper.identId)
+
+  const state = await storage.getState()
+  const data = await storage.getData()
+
+  console.log("Request storage state: ", state)
+  console.log("Request storage data: ", JSON.stringify(data, null, 2))
 });

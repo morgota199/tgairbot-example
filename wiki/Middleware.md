@@ -41,13 +41,13 @@ You can also use chain middleware.
 
 ```typescript
 const firstMiddleware = useMiddleware<"message">((wrapper, next) => {
-    console.log("First middleware")
+    console.log("First middlewares")
 
     next();
 });
 
 const secondMiddleware = useMiddleware<"message">((wrapper, next) => {
-    console.log("Second middleware")
+    console.log("Second middlewares")
 
     next();
 });

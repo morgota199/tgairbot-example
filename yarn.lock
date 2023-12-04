@@ -2,8 +2,10 @@
 # yarn lockfile v1
 
 
-"@tgairbot/core@file:../core":
+"@tgairbot/core@0.4.0-alpha":
   version "0.4.0-alpha"
+  resolved "https://registry.yarnpkg.com/@tgairbot/core/-/core-0.4.0-alpha.tgz#5e378144667d69d0ee128683e9f8843a277d223c"
+  integrity sha512-tiZhF53ADYD4Hu/0KB1VPNZqYIbTWPj6a9SsKCs6e4KBVkf7kdjYihG7VPPcCFdFLngF0wyb7GG4vgsa63KYuw==
   dependencies:
     form-data "^4.0.0"
 

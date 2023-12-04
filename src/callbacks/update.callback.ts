@@ -16,7 +16,7 @@ export const onUpdateCallback: HandlerCallback<"message"> = async ({
 
   const storage = useStorage<UserFormState>(wrapper.identId);
 
-  const data = await storage.getData();
+  const data = await storage.getData() || {};
   if (!(data.firstName && data.lastName && data.phone)) return;
 
   await storage.clear();
@@ -24,10 +24,9 @@ export const onUpdateCallback: HandlerCallback<"message"> = async ({
   await methods.sendMessage({
     chatId: params.chat.id,
     parseMode: Telegram.ParseMode.HTML,
-    text: `Success!!!
-  First name: <b>${data.firstName}</b>
-  Last name: <b>${data.lastName}</b>
-  Phone: <b>${data.phone}</b>
-  `,
+    text: `<b>Success!!!</b>
+First name: <b>${data.firstName}</b>
+Last name: <b>${data.lastName}</b>
+Phone: <b>${data.phone}</b>`,
   });
 };
